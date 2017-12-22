@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html' %}
+{%block content %}
+<br><br>
+<form method="post" action="">
+        {% csrf_token %}
+        <p class="h2">정말 삭제 하기겠습니까?</p>
+        <br/><br/>
+        <button type="submit" value="yes"  class="btn btn-danger">Delete</button>
+        <a href="{% url 'video-detail' object.id %}" class="btn btn-secondary" role="button">Cancel</a>
+</form>
+
+{% endblock %}
